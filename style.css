@@ -1,8 +1,14 @@
 /* add your global styles like fonts, colors, links, etc. */
 body {
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--body-text);
 
 }
 h1, h2, h3, h4 {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 
 }
 
@@ -10,22 +16,122 @@ h1, h2, h3, h4 {
  *  NOTE: #site-nav is for a container with an id of site-nav
  *  ex: <header id="site-nav"> */
 #site-nav {
-
+    background-color: var(--dark-primary);
+    background-color: var();
 }
-#site-nav ul {
+    #site-nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
 
 }
 #site-nav ul a {
-
+    display: block;
+    padding: 0.5em 1em;
+    color: var(--body-bg);
+    background-color: var(--body-text);
+    text-decoration: none;
 }
 
 /* Style mobile first header with BG Image 
  * set the height, padding, bg-color, image */
 #hero {
-
+    height: 70vh;
+    background-image: url("images/dog.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left 30px;
+    color: var(--body-bg);
+}
+#tagline {
+    padding: 1em;
+    background-color: #7777;
+    box-shadow: 0 0 20px #999;
+    border-radius: 5px;
+    margin: 10%;
+    color: var(--body-text);
+}
+section, main, footer {
+    padding: 1em;
 }
 
 /* Add a breakpoint +- 600px and your grid */
-@media only screen and (min-width: __px) {
+@media only screen and (min-width: 600px) {
+    #site-nav {
+        grid-area: nav;
+    }
+    #tagline {
+        grid-area: tag;
+        align-self: center;
+    }
+    #hero {
+        display: grid;
+        grid-template-columns: 1vw 33vw auto;
+        grid-template-rows: 36px auto;
+        grid-template-areas: 
+            "nav nav nav"
+            ". tag .";
+    }
     
 }
+p {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #80CED6;
+  }
+  
+  li {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-right:  1px solid #000;
+    border-left: 1px solid #000;
+    float: left;
+  }
+  
+
+  
+  li a {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #b1cbbb;
+  }
+  
+  .active {
+    background-color: #b1cbbb;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    transition: all 1s ease-in;
+  }
+  nav ul.open {
+    opacity: 1;
+    height: auto;
+  }
+  nav a:link {
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    padding: 0.5em 1em;
+    background-color: #F55353;
+    color: black;
+    border: 1px solid black;
+  }
